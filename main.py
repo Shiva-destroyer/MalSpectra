@@ -24,6 +24,8 @@ from core.logger import setup_logger
 
 # Import modules
 from modules.reverse_engineering import main as reverse_engineering_module
+from modules.ghidra_bridge import main as ghidra_bridge_module
+from modules.sandbox import main as sandbox_module
 
 # Initialize console and logger
 console = Console()
@@ -115,6 +117,16 @@ def execute_module(module_name: str) -> None:
     if module_name == "Reverse Engineering":
         # Execute Reverse Engineering module
         reverse_engineering_module.run()
+        return
+    
+    elif module_name == "Ghidra Bridge":
+        # Execute Ghidra Bridge module
+        ghidra_bridge_module.run()
+        return
+    
+    elif module_name == "Dynamic Sandbox":
+        # Execute Sandbox module
+        sandbox_module.run()
         return
     
     # Module under construction message
