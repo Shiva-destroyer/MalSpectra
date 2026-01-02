@@ -20,6 +20,50 @@ class OverlayStripper:
     often used to hide payloads or additional malware components.
     """
     
+    def __init__(self, file_path: str = None):
+        """
+        Initialize OverlayStripper.
+        
+        Args:
+            file_path: Optional path to PE file
+        """
+        self.file_path = file_path
+    
+    def detect_overlay(self) -> Dict:
+        """
+        Detect overlay in the loaded PE file (instance method).
+        
+        Returns:
+            Dictionary with overlay information
+        """
+        if self.file_path is None:
+            return {'error': 'No file path set'}
+        
+        # Use static method
+        has_overlay, info = self._detect_overlay_static(self.file_path)
+        return info
+    
+    @staticmethod
+    def _detect_overlay_static(file_path: str) -> Tuple[bool, Dict]:
+        """
+        Static method to detect overlay.
+        
+        Args:
+            file_path: Path to PE file
+            
+        Returns:
+            Tuple of (has_overlay, info_dict)
+        """
+        if not OverlayStripper.is_pe_file(file_path):
+            return False, {'error': 'Not a valid PE file'}
+        
+        pe_size, info = OverlayStripper.calculate_pe_size(file_path)
+        
+        if 'error' in info:
+            return False, info
+        
+        return info['has_overlay'], info
+    
     @staticmethod
     def is_pe_file(file_path: str) -> bool:
         """
@@ -132,27 +176,6 @@ class OverlayStripper:
         
         except Exception as e:
             return 0, {'error': f'Error parsing PE: {str(e)}'}
-    
-    @staticmethod
-    def detect_overlay(file_path: str) -> Tuple[bool, Dict]:
-        """
-        Detect if PE file has an overlay.
-        
-        Args:
-            file_path: Path to PE file
-            
-        Returns:
-            Tuple of (has_overlay, info_dict)
-        """
-        if not OverlayStripper.is_pe_file(file_path):
-            return False, {'error': 'Not a valid PE file'}
-        
-        pe_size, info = OverlayStripper.calculate_pe_size(file_path)
-        
-        if 'error' in info:
-            return False, info
-        
-        return info['has_overlay'], info
     
     @staticmethod
     def strip_overlay(input_file: str, output_file: str = None, 
