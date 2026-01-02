@@ -32,6 +32,9 @@ from modules.code_injection import main as code_injection_module
 from modules.rootkit_analysis import main as rootkit_analysis_module
 from modules.botnet_analyzer import main as botnet_analyzer_module
 from modules.ransomware_decrypt import main as ransomware_decrypt_module
+from modules.worm_sim import main as worm_sim_module
+from modules.trojan_detect import main as trojan_detect_module
+from modules.packer_unpacker import main as packer_unpacker_module
 
 # Initialize console and logger
 console = Console()
@@ -55,6 +58,9 @@ def display_banner() -> None:
     # Create info panel
     info_text = Text()
     info_text.append("⚡ Advanced Unified Cybersecurity Framework ⚡\n", style="bold yellow")
+    info_text.append("Version: ", style="white")
+    info_text.append("v1.0 FINAL", style="bold red")
+    info_text.append(" - 12 Complete Modules\n", style="bold green")
     info_text.append(f"\nDeveloper: ", style="white")
     info_text.append(f"{config.DEVELOPER}", style="bold magenta")
     info_text.append(f"\nContact: ", style="white")
@@ -163,6 +169,21 @@ def execute_module(module_name: str) -> None:
     elif module_name == "Ransomware Helper":
         # Execute Ransomware Decryption Helper module
         ransomware_decrypt_module.run()
+        return
+    
+    elif module_name == "Worm Propagation Simulator":
+        # Execute Worm Propagation Simulator module
+        worm_sim_module.run()
+        return
+    
+    elif module_name == "Trojan Detection System":
+        # Execute Trojan Detection System module
+        trojan_detect_module.run()
+        return
+    
+    elif module_name == "Malware Packer/Unpacker":
+        # Execute Malware Packer/Unpacker module
+        packer_unpacker_module.run()
         return
     
     # Module under construction message

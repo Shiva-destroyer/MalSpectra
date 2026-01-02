@@ -44,13 +44,16 @@ class MalSpectraConfig:
     MODULES: list = field(default_factory=lambda: [
         "Reverse Engineering",
         "Ghidra Bridge",
-        "Malware Sandbox",
+        "Dynamic Sandbox",
         "Signature Generator",
         "API Hooking",
         "Code Injection",
         "Rootkit Analysis",
         "Botnet Analyzer",
-        "Ransomware Helper"
+        "Ransomware Helper",
+        "Worm Propagation Simulator",
+        "Trojan Detection System",
+        "Malware Packer/Unpacker"
     ])
     
     MODULE_MAPPING: Dict[str, str] = field(default_factory=lambda: {
