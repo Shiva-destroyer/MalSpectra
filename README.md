@@ -112,24 +112,24 @@ python3 main.py
 
 ```
 ═══ AVAILABLE MODULES ═══
-┌───┬────────────────────────────────┐
-│ # │ Module Name                    │
-├───┼────────────────────────────────┤
-│ 1 │ 🔒 Reverse Engineering         │
-│ 2 │ 🔒 Ghidra Bridge               │
-│ 3 │ 🔒 Dynamic Sandbox             │
-│ 4 │ 🔒 Signature Generator         │
-│ 5 │ 🔒 API Hooking                 │
-│ 6 │ 🔒 Code Injection              │
-│ 7 │ 🔒 Rootkit Analysis            │
-│ 8 │ 🔒 Botnet Analyzer             │
-│ 9 │ 🔒 Ransomware Helper           │
-│10 │ 🔒 Worm Propagation Simulator  │
-│11 │ 🔒 Trojan Detection System     │
-│12 │ 🔒 Malware Packer/Unpacker     │
-│   │                                │
-│ 0 │ ❌ Exit MalSpectra             │
-└───┴────────────────────────────────┘
+┏━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃   #   ┃ Module Name                   ┃
+┡━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│   1   │ ⚙️ Reverse Engineering         │
+│   2   │ 🌉 Ghidra Bridge              │
+│   3   │ 📦 Dynamic Sandbox            │
+│   4   │ 📝 Signature Generator        │
+│   5   │ 🎣 API Hooking                │
+│   6   │ 💉 Code Injection             │
+│   7   │ 🕵️ Rootkit Analysis            │
+│   8   │ 🌐 Botnet Analyzer            │
+│   9   │ 🔓 Ransomware Helper          │
+│  10   │ 🦠 Worm Propagation Simulator │
+│  11   │ 🐎 Trojan Detection System    │
+│  12   │ 📦 Malware Packer/Unpacker    │
+│       │                               │
+│   0   │ ❌ Exit MalSpectra            │
+└───────┴───────────────────────────────┘
 
 Select a module: _
 ```

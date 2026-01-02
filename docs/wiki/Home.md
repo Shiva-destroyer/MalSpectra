@@ -10,15 +10,15 @@ Welcome to the **MalSpectra** documentation! This comprehensive framework provid
 
 1. **[Reverse Engineering](01_Reverse_Engineering.md)** - Static analysis & entropy detection
 2. **[Ghidra Bridge](02_Ghidra_Bridge.md)** - Automated decompilation & analysis
-3. **[Dynamic Sandbox](03_Dynamic_Sandbox.md)** - Behavioral analysis & monitoring
+3. **[Dynamic Sandbox](03_Malware_Sandbox.md)** - Behavioral analysis & monitoring
 4. **[Signature Generator](04_Signature_Generator.md)** - YARA rule creation from samples
 5. **[API Hooking](05_API_Hooking.md)** - Runtime function interception
 6. **[Code Injection](06_Code_Injection.md)** - Process injection techniques
 7. **[Rootkit Analysis](07_Rootkit_Analysis.md)** - Kernel-level threat detection
 8. **[Botnet Analyzer](08_Botnet_Analyzer.md)** - Network traffic analysis
 9. **[Ransomware Helper](09_Ransomware_Helper.md)** - Encryption analysis toolkit
-10. **[Worm Propagation Simulator](10_Worm_Sim.md)** - Network propagation modeling
-11. **[Trojan Detection System](11_Trojan_Detect.md)** - Behavior-based classification
+10. **[Worm Propagation Simulator](10_Worm_Simulator.md)** - Network propagation modeling
+11. **[Trojan Detection System](11_Trojan_Detection.md)** - Behavior-based classification
 12. **[Malware Packer/Unpacker](12_Packer_Unpacker.md)** - PE packing detection & removal
 
 ---
