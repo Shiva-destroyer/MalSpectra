@@ -29,6 +29,9 @@ from modules.sandbox import main as sandbox_module
 from modules.signature_gen import main as signature_gen_module
 from modules.api_hooking import main as api_hooking_module
 from modules.code_injection import main as code_injection_module
+from modules.rootkit_analysis import main as rootkit_analysis_module
+from modules.botnet_analyzer import main as botnet_analyzer_module
+from modules.ransomware_decrypt import main as ransomware_decrypt_module
 
 # Initialize console and logger
 console = Console()
@@ -145,6 +148,21 @@ def execute_module(module_name: str) -> None:
     elif module_name == "Code Injection":
         # Execute Code Injection module
         code_injection_module.run()
+        return
+    
+    elif module_name == "Rootkit Analysis":
+        # Execute Rootkit Analysis module
+        rootkit_analysis_module.run()
+        return
+    
+    elif module_name == "Botnet Analyzer":
+        # Execute Botnet Analyzer module
+        botnet_analyzer_module.run()
+        return
+    
+    elif module_name == "Ransomware Helper":
+        # Execute Ransomware Decryption Helper module
+        ransomware_decrypt_module.run()
         return
     
     # Module under construction message
