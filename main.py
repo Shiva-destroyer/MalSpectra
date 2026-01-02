@@ -26,6 +26,9 @@ from core.logger import setup_logger
 from modules.reverse_engineering import main as reverse_engineering_module
 from modules.ghidra_bridge import main as ghidra_bridge_module
 from modules.sandbox import main as sandbox_module
+from modules.signature_gen import main as signature_gen_module
+from modules.api_hooking import main as api_hooking_module
+from modules.code_injection import main as code_injection_module
 
 # Initialize console and logger
 console = Console()
@@ -127,6 +130,21 @@ def execute_module(module_name: str) -> None:
     elif module_name == "Dynamic Sandbox":
         # Execute Sandbox module
         sandbox_module.run()
+        return
+    
+    elif module_name == "Signature Generator":
+        # Execute Signature Generator module
+        signature_gen_module.run()
+        return
+    
+    elif module_name == "API Hooking":
+        # Execute API Hooking module
+        api_hooking_module.run()
+        return
+    
+    elif module_name == "Code Injection":
+        # Execute Code Injection module
+        code_injection_module.run()
         return
     
     # Module under construction message
