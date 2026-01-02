@@ -22,6 +22,8 @@ from rich import box
 from core.config import config
 from core.logger import setup_logger
 
+# Import modules
+from modules.reverse_engineering import main as reverse_engineering_module
 
 # Initialize console and logger
 console = Console()
@@ -45,14 +47,10 @@ def display_banner() -> None:
     # Create info panel
     info_text = Text()
     info_text.append("⚡ Advanced Unified Cybersecurity Framework ⚡\n", style="bold yellow")
-    info_text.append(f"\nVersion: ", style="white")
-    info_text.append(f"{config.VERSION}", style="bold green")
     info_text.append(f"\nDeveloper: ", style="white")
     info_text.append(f"{config.DEVELOPER}", style="bold magenta")
-    info_text.append(f"\nEmail: ", style="white")
+    info_text.append(f"\nContact: ", style="white")
     info_text.append(f"{config.EMAIL}", style="italic cyan")
-    info_text.append(f"\nLicense: ", style="white")
-    info_text.append(f"{config.LICENSE}", style="bold blue")
     
     # Display banner
     console.print("\n")
@@ -112,6 +110,12 @@ def execute_module(module_name: str) -> None:
         module_name: Name of the module to execute
     """
     logger.info(f"Module selected: {module_name}")
+    
+    # Module execution mapping
+    if module_name == "Reverse Engineering":
+        # Execute Reverse Engineering module
+        reverse_engineering_module.run()
+        return
     
     # Module under construction message
     message = Text()
