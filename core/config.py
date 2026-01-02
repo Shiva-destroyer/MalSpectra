@@ -50,13 +50,7 @@ class MalSpectraConfig:
         "Code Injection",
         "Rootkit Analysis",
         "Botnet Analyzer",
-        "Ransomware Helper",
-        "Rootkit Analysis",
-        "Botnet Analyzer",
-        "Ransomware Decrypt",
-        "Worm Simulator",
-        "Trojan Detector",
-        "Packer/Unpacker"
+        "Ransomware Helper"
     ])
     
     MODULE_MAPPING: Dict[str, str] = field(default_factory=lambda: {
