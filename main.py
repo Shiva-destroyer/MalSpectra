@@ -89,27 +89,27 @@ def display_main_menu() -> None:
         show_header=True,
         header_style="bold magenta",
         border_style="cyan",
-        box=box.DOUBLE_EDGE,
+        box=box.HEAVY_HEAD,
         padding=(0, 1)
     )
     
     table.add_column("#", style="bold yellow", justify="center", width=5)
-    table.add_column("Module Name", style="bold green", width=30)
-    table.add_column("Status", style="cyan", justify="center", width=15)
+    table.add_column("Module Name", style="bold green")
     
     # Add modules to table
     for idx, module in enumerate(config.MODULES, 1):
         table.add_row(
             str(idx),
-            f"🔒 {module}",
-            "[yellow]Development[/yellow]"
+            f"🔒 {module}"
         )
+    
+    # Add separator
+    table.add_row("", "")
     
     # Add exit option
     table.add_row(
         "0",
-        "❌ Exit MalSpectra",
-        "[red]System[/red]"
+        "❌ Exit MalSpectra"
     )
     
     console.print(table)
@@ -216,10 +216,18 @@ def main_loop() -> None:
     """Main application loop."""
     logger.info("Entering main application loop")
     
+    # Banner flag - only show once
+    first_run = True
+    
     while True:
         try:
             # Clear screen for clean display
             os.system('clear' if os.name != 'nt' else 'cls')
+            
+            # Display banner only on first run
+            if first_run:
+                display_banner()
+                first_run = False
             
             # Display menu
             display_main_menu()
@@ -297,10 +305,7 @@ def main_loop() -> None:
 def main() -> None:
     """Main entry point of the application."""
     try:
-        # Display banner and welcome message
-        display_banner()
-        
-        # Start main application loop
+        # Start main application loop (banner shown inside)
         main_loop()
     
     except Exception as e:
