@@ -83,6 +83,22 @@ def display_banner() -> None:
 
 def display_main_menu() -> None:
     """Display the main menu with all available modules."""
+    # Module icons mapping - context-aware icons for professional appearance
+    module_icons = {
+        "Reverse Engineering": "⚙️",
+        "Ghidra Bridge": "🌉",
+        "Dynamic Sandbox": "📦",
+        "Signature Generator": "📝",
+        "API Hooking": "🎣",
+        "Code Injection": "💉",
+        "Rootkit Analysis": "🕵️",
+        "Botnet Analyzer": "🌐",
+        "Ransomware Helper": "🔓",
+        "Worm Propagation Simulator": "🦠",
+        "Trojan Detection System": "🐎",
+        "Malware Packer/Unpacker": "📦"
+    }
+    
     # Create table for modules
     table = Table(
         title="[bold cyan]═══ AVAILABLE MODULES ═══[/bold cyan]",
@@ -96,11 +112,12 @@ def display_main_menu() -> None:
     table.add_column("#", style="bold yellow", justify="center", width=5)
     table.add_column("Module Name", style="bold green")
     
-    # Add modules to table
+    # Add modules to table with context-aware icons
     for idx, module in enumerate(config.MODULES, 1):
+        icon = module_icons.get(module, "🔒")  # Fallback to lock if not found
         table.add_row(
             str(idx),
-            f"🔒 {module}"
+            f"{icon} {module}"
         )
     
     # Add separator
